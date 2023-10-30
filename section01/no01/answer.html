@@ -6,16 +6,14 @@
   <body>
     <script>
       function solution(a, b, c) {
-        let min;
-        if (a < b && a < c) {
-          min = a;
-        } else if (b < c && b < a) {
-          min = b;
-        } else if (c < a && c < b) {
-          min = c;
-        }
+        let answer;
+        if (a < b) answer = a;
+        else answer = b;
+        if (c < answer) answer = c;
+        return answer;
 
-        return min;
+        // 정렬 사용
+        // return Math.min(a, b, c);
       }
 
       console.log(solution(2, 5, 1));

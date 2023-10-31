@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      // 삼각형이 되기 위한 조건 - 가장 긴 변의 길이가 나머지 두 변의 길이의 합보다 커야한다
+      function solution(a, b, c) {
+        let answer = 'YES',
+          max;
+        let tot = a + b + c;
+        if (a > b) max = a;
+        else max = b;
+        if (c > max) max = c;
+
+        if (tot - max <= max) answer = 'NO';
+        return answer;
+      }
+
+      console.log(solution(13, 33, 17));
+    </script>
+  </body>
+</html>

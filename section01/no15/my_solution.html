@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = '';
+        let ave = Math.floor(s.length / 2);
+        if (s.length % 2 === 0) {
+          answer += s[ave - 1] + s[ave];
+        } else {
+          answer += s[ave];
+        }
+        return answer;
+      }
+      console.log(solution('studying'));
+    </script>
+  </body>
+</html>

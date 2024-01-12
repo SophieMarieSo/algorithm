@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = arr[0] === 1 ? 1 : 0;
+        let cnt = 1;
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] === 1) {
+            if (arr[i - 1] !== 1) {
+              // 연속되는 수가 아니면
+              answer++;
+            } else {
+              // 연속되는 수이면
+              cnt++;
+              answer += cnt;
+            }
+          } else {
+            cnt = 1;
+          }
+        }
+        return answer;
+      }
+
+      let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

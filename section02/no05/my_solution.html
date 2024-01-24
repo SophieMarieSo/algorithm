@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        let score = [...arr];
+        let set = new Set(arr);
+        score.sort((a, b) => b - a);
+
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === score[j]) {
+              answer.push(score.indexOf(arr[i]) + 1);
+              break;
+            }
+          }
+        }
+        return answer;
+      }
+
+      let arr = [87, 87, 100, 100, 76];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
